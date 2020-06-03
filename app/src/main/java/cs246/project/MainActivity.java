@@ -12,5 +12,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         System.out.println("Elizabeth Change");
         System.out.println("Making a sample change");
+        System.out.println("Third change");
     }
 }
