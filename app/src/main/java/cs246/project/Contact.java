@@ -1,3 +1,5 @@
+package cs246.project;
+
 public class Contact {
     private String phone;
     private String auxInfo;
