@@ -3,13 +3,11 @@ package cs246.project;
 public class Client {
 
     private String name;
-    private String phoneNumber;
-    private String comments;
+    private Contact contact;
 
 public Client (String name, String phoneNumber, String comments){
     this.name = name;
-    this.phoneNumber = phoneNumber;
-    this.comments = comments;
+    this.contact = new Contact(phoneNumber, comments);
 }
 
 public  void addExclamation(String name){
