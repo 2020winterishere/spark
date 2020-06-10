@@ -14,4 +14,18 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void subtraction_isCorrect(){assertEquals(3,5-2);}
+
+    @Test
+    public void testNameExclamation(){
+
+        Client client1 = new Client("John","999999","hello");
+
+        client1.addExclamation("hi");
+
+
+    }
+
 }
