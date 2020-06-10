@@ -15,17 +15,34 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
+
+    /* Simple tests to get familiar with testing units. Delete the following tests
+    once our application is constructed and we are ready to test relevant parts of our
+    final project. Database, reader, etc.
+     */
     @Test
     public void subtraction_isCorrect(){assertEquals(3,5-2);}
 
     @Test
     public void testNameExclamation(){
-
         Client client1 = new Client("John","999999","hello");
-
-        client1.addExclamation("hi");
-
-
     }
+
+    @Test
+    public void testProductClass(){
+
+        Product product1 = new Product("fakeName","shampoo","1234");
+
+        //Set new name product
+        product1.setName("pink");
+
+        System.out.println(product1.getName());
+
+        //change name again
+        product1.setName("black");
+        System.out.println(product1.getName());
+    }
+
+
 
 }

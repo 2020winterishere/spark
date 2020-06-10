@@ -12,11 +12,28 @@ public Client (String name, String phoneNumber, String comments){
     this.comments = comments;
 }
 
-public  void addExclamation(String name){
-    System.out.printf(name + "!");
-}
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 }
