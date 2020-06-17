@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">spark</string>
+    <string name="app_name">application</string>
+    <string name="add_client">adding client</string>
+    <string name="hint_client">Client...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Client not saved because it is empty.</string>
 </resources>
