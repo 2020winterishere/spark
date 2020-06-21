@@ -22,12 +22,12 @@ public interface ClientDao {
     @Query("DELETE FROM client_table")
     void deleteAll();
 
-    @Query("SELECT * from client_table ORDER BY client ASC")
+    @Query("SELECT * from client_table ORDER BY name ASC")
     LiveData<List<SingleClient>> getAlphabetizedWords();
 
     //delete client
-    @Query("DELETE FROM " + SingleClient.TABLE_NAME + " WHERE " + SingleClient.COLUMN_ID + " = :name")
-    String deleteByName(String name);
+    @Query("DELETE FROM " + SingleClient.TABLE_NAME + " WHERE name = :name")
+    int deleteByName(String name);
 
     //update
     @Update

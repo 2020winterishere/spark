@@ -38,7 +38,7 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Cl
     public void onBindViewHolder(ClientViewHolder holder, int position) {
         if (mClients != null) {
             SingleClient current = mClients.get(position);
-            holder.clientItemView.setText(current.getClient());
+            holder.clientItemView.setText(current.getName());
         } else {
             // Covers the case of data not being ready yet.
             holder.clientItemView.setText("No Client");
