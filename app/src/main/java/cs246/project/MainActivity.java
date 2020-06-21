@@ -16,6 +16,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
+import cs246.project.Entity.SingleClient;
+
 public class MainActivity extends AppCompatActivity {
 
     private ClientViewModel mClientViewModel;

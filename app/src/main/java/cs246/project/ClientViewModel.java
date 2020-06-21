@@ -7,6 +7,8 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import cs246.project.Entity.SingleClient;
+
 public class ClientViewModel extends AndroidViewModel {
 
     private ClientRepository mRepository;

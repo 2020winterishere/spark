@@ -6,6 +6,10 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import cs246.project.Database.ClientRoomDatabase;
+import cs246.project.Entity.SingleClient;
+import cs246.project.Interface.ClientDao;
+
 class ClientRepository {
 
     private ClientDao mClientDao;

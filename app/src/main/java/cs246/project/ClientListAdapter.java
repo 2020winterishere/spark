@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import cs246.project.Entity.SingleClient;
+
 public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.ClientViewHolder> {
 
     class ClientViewHolder extends RecyclerView.ViewHolder {
