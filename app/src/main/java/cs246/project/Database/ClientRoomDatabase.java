@@ -55,10 +55,12 @@ public abstract class ClientRoomDatabase extends RoomDatabase {
                 ClientDao dao = INSTANCE.clientDao();
                 dao.deleteAll();
 
-                SingleClient client = new SingleClient("Hello");
+                //Delete sample clients
+
+               /* SingleClient client = new SingleClient("Hello");
                 dao.insert(client);
                 client = new SingleClient("World");
-                dao.insert(client);
+                dao.insert(client);*/
             });
         }
     };

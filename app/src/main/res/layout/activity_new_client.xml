@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--hide original field
     <EditText
         android:id="@+id/edit_client"
         android:layout_width="match_parent"
@@ -14,6 +15,49 @@
         android:inputType="textAutoComplete"
         android:layout_margin="@dimen/big_padding"
         android:textSize="18sp" />
+        -->
+
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height"
+        android:layout_margin="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/first_name"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp"
+        android:autofillHints="First Name"/>
+
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height"
+        android:layout_margin="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/last_name"
+        android:inputType="textAutoComplete"
+
+        android:textSize="18sp"
+        android:autofillHints="Last Name"/>
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:minHeight="@dimen/min_height"
+        android:textSize="18sp"
+        android:autofillHints="Phone Number"/>
+
+
+
+
 
     <Button
         android:id="@+id/button_save"

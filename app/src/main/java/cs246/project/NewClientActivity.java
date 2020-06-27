@@ -15,25 +15,43 @@ public class NewClientActivity extends AppCompatActivity {
 
     private EditText mEditClientView;
 
+    //add first and last name to database
+    private EditText mEditFirstNameView;
+    private EditText mEditLastNameView;
+    private EditText mEditPhoneNumberView;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_client);
-        mEditClientView = findViewById(R.id.edit_client);
+       // mEditClientView = findViewById(R.id.edit_client);
+
+        //add first name, last name and phone number
+        mEditFirstNameView =findViewById(R.id.first_name);
+        mEditLastNameView =findViewById(R.id.last_name);
+        mEditPhoneNumberView = findViewById(R.id.phone_number);
+
 
         final Button button = findViewById(R.id.button_save);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
+        button.setOnClickListener((View v) -> {
+
                 Intent replyIntent = new Intent();
-                if (TextUtils.isEmpty(mEditClientView.getText())) {
+                //check if first name field is empty. If it is empty skip saving data.
+                if (TextUtils.isEmpty(mEditFirstNameView.getText())) {
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
-                    String client = mEditClientView.getText().toString();
+                    //String client = mEditClientView.getText().toString();
+                    String client = mEditFirstNameView.getText().toString() + " " +
+                            mEditLastNameView.getText().toString() + "\n" +
+                            mEditPhoneNumberView.getText().toString();
                     replyIntent.putExtra(EXTRA_REPLY, client);
                     setResult(RESULT_OK, replyIntent);
                 }
                 finish();
-            }
+
         });
+
+
     }
 }
