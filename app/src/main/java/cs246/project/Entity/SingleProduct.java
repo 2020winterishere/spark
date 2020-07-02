@@ -35,21 +35,51 @@ public class SingleProduct {
         this.stock = stock;
     }
 
-    public long getId() {
-        return id;
-    }
+    /**
+     * Get ID of the product
+     * @return
+     */
+    public long getId() { return id; }
 
+    /**
+     * Set ID of the product
+     * @return
+     */
     public void setId(long id) { this.id = id; }
 
+    /**
+     * Get name of the product
+     * @return
+     */
     public String getName() { return name; }
 
+    /**
+     * Set name of the product
+     * @return
+     */
     public void setName(String name) { this.name = name; }
 
+    /**
+     * Get description of the product
+     * @return
+     */
     public String getDescription() { return description; }
 
+    /**
+     * Set descripton of the product
+     * @return
+     */
     public void setDescription(String description) { this.description = description; }
 
+    /**
+     * Get number of units on inventory of the product
+     * @return
+     */
     public int getStock() { return stock; }
 
+    /**
+     * Set number of units on inventory of the product
+     * @return
+     */
     public void setStock(int stock) { this.stock = stock; }
 }
