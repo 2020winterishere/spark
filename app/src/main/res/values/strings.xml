@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">application</string>
+    <string name="app_name">Spark - Client and Product Handling</string>
     <string name="add_client">adding client</string>
     <string name="hint_client">Client</string>
     <string name="button_save">Save</string>
@@ -7,4 +7,5 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="phone_number">Phone Number</string>
+    <string name="no_client">No Client</string>
 </resources>

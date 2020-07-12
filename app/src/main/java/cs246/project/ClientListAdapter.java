@@ -6,11 +6,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
 import cs246.project.Entity.SingleClient;
+
+/**
+ * <h1> Client Recycler View</h1>
+ * <p>
+ *     We use a recycler view to display all data in client database instead of using a
+ *     TextView. This will allow us to present data in a nicer way.
+ * </p>
+ */
 
 public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.ClientViewHolder> {
 
@@ -28,20 +35,22 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Cl
 
     ClientListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
+    @NonNull
     @Override
-    public ClientViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ClientViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
         return new ClientViewHolder(itemView);
     }
 
+
     @Override
-    public void onBindViewHolder(ClientViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ClientViewHolder holder, int position) {
         if (mClients != null) {
             SingleClient current = mClients.get(position);
             holder.clientItemView.setText(current.getName());
         } else {
             // Covers the case of data not being ready yet.
-            holder.clientItemView.setText("No Client");
+            holder.clientItemView.setText(R.string.no_client);
         }
     }
 

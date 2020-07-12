@@ -9,6 +9,12 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * <h1>Display for a single client</h1>
+ * <p>This is the display of a single client.
+ * </p>
+ *
+ */
 public class NewClientActivity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY = "com.example.android.clientlistsql.REPLY";

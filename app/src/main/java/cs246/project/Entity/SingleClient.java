@@ -8,6 +8,18 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+
+/**
+ * <h1> Single Client Class</h1>
+ * <p>
+ *     This class will describe the Entity which represents an SQLite table for all clients.
+ *     Each property in this class represents a column in the table.
+ *     Room will ultimately use these properties to both create the table and instantiate objects
+ *     from rows in the database.
+ *</p>
+ */
+
+
 @Entity(tableName = SingleClient.TABLE_NAME)
 public class  SingleClient {
 
@@ -23,12 +35,13 @@ public class  SingleClient {
     @ColumnInfo //(name = "client")
     private String name;
 
+    @NonNull
+    public String getName(){ return this.name;}
 
-    public String getName(){return this.name;}
+    public void setName(@NonNull String name) {this.name = name;}
 
-    public void setName(String name) {this.name = name;}
 
-    public SingleClient(String name) {
+    public SingleClient(@NonNull String name) {
         this.name = name;
     }
 

@@ -10,15 +10,21 @@ import cs246.project.Database.ClientRoomDatabase;
 import cs246.project.Entity.SingleClient;
 import cs246.project.Interface.ClientDao;
 
+/**
+ * <h1> Client Repository</h1>
+ * <p>
+ *     This repository class abstracts access to multiple data sources. The repository is not
+ *     parts of the Architecture Components Libraries. It provides clean API for data access
+ *     to the rest of the application.
+ * </p>
+ */
+
 class ClientRepository {
 
     private ClientDao mClientDao;
     private LiveData<List<SingleClient>> mAllClients;
 
-    // Note that in order to unit test the WordRepository, you have to remove the Application
-    // dependency. This adds complexity and much more code, and this sample is not about testing.
-    // See the BasicSample in the android-architecture-components repository at
-    // https://github.com/googlesamples
+
     ClientRepository(Application application) {
         ClientRoomDatabase db = ClientRoomDatabase.getDatabase(application);
         mClientDao = db.clientDao();
@@ -34,8 +40,12 @@ class ClientRepository {
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
     void insert(SingleClient client) {
-        ClientRoomDatabase.databaseWriteExecutor.execute(() -> {
-            mClientDao.insert(client);
-        });
+        ClientRoomDatabase.databaseWriteExecutor.execute(() ->
+            mClientDao.insert(client)
+        );
     }
+
+
+
+
 }

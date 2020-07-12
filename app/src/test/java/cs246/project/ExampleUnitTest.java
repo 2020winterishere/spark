@@ -2,6 +2,9 @@ package cs246.project;
 
 import org.junit.Test;
 
+import cs246.project.Entity.SingleClient;
+import cs246.project.Entity.SingleProduct;
+
 import static org.junit.Assert.*;
 
 /**
@@ -25,13 +28,13 @@ public class ExampleUnitTest {
 
     @Test
     public void testNameExclamation(){
-        Client client1 = new Client("John","999999","hello");
+        SingleClient client1 = new SingleClient("testName");
     }
 
     @Test
     public void testProductClass(){
 
-        Product product1 = new Product("fakeName","shampoo","1234");
+        SingleProduct product1 = new SingleProduct(32,"hello","description",3);
 
         //Set new name product
         product1.setName("pink");

@@ -18,37 +18,33 @@ public interface ProductDao {
     // conflict resolution strategy
 
     /**
-     * add a new peoduct to the database
-     * @param product
+     * add a new product to the database
+     * @param product a single product in the database
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(SingleProduct product);
 
     /**
-     * Delele all products of the database
+     * Delete all products of the database
      */
     @Query("DELETE FROM product_table")
     void deleteAll();
 
     /**
      * Order products of the database by name
-     * @return
      */
     @Query("SELECT * from product_table ORDER BY name ASC")
     LiveData<List<SingleProduct>> getAlphabetizedWords();
 
     /**
      * Delete a product by ID
-     * @param id
-     * @return
      */
     @Query("DELETE FROM " + SingleProduct.TABLE_NAME + " WHERE " + SingleProduct.COLUMN_ID + " = :id")
     int deleteByID(String id);
 
     /**
      * Edit product
-     * @param client
-     * @return
+     * @param client single client
      */
     //update
     @Update

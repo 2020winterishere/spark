@@ -15,6 +15,21 @@ import cs246.project.Entity.SingleClient;
 import cs246.project.Interface.ClientDao;
 import cs246.project.Database.ClientRoomDatabase;
 
+/**
+ * <h1> Room database</h1>
+ * <p>This Room database is a layer on top of an SQLite database. Room takes care of
+ * mundane tasks used to be handled with an SQLiteOpenHelper. Room uses DAO to issue
+ * queries to its database.</p>
+ *
+ *<p>
+ *     By default Room issues queries on separate threads. When it queries return LiveData,
+ *     the queries are automatically run asynchronously on a background thread. Room also
+ *     provides compile-time checks of SQLite statements.
+ *</p>
+ *
+ */
+
+
 @Database(entities = {SingleClient.class}, version = 1, exportSchema = false)
 public abstract class ClientRoomDatabase extends RoomDatabase {
 
@@ -42,6 +57,9 @@ public abstract class ClientRoomDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
+    /**
+     * Populates the database with sample data if needed.
+     */
     private static Callback sRoomDatabaseCallback = new Callback() {
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {
