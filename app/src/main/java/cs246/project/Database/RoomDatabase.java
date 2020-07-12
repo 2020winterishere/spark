@@ -5,15 +5,15 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
-import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import cs246.project.Entity.SingleClient;
+import cs246.project.Entity.SingleProduct;
 import cs246.project.Interface.ClientDao;
-import cs246.project.Database.ClientRoomDatabase;
+import cs246.project.Interface.ProductDao;
 
 /**
  * <h1> Room database</h1>
@@ -30,25 +30,26 @@ import cs246.project.Database.ClientRoomDatabase;
  */
 
 
-@Database(entities = {SingleClient.class}, version = 1, exportSchema = false)
-public abstract class ClientRoomDatabase extends RoomDatabase {
+@Database(entities = {SingleClient.class, SingleProduct.class}, version = 1, exportSchema = false)
+public abstract class RoomDatabase extends androidx.room.RoomDatabase {
 
     @SuppressWarnings("WeakerAcces")
     public abstract ClientDao clientDao();
+    public abstract ProductDao productDao();
 
-    private static volatile ClientRoomDatabase INSTANCE;
+    private static volatile RoomDatabase INSTANCE;
 
     private static final int NUMBER_OF_THREADS = 4;
 
     public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    public static ClientRoomDatabase getDatabase(final Context context) {
+    public static RoomDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
-            synchronized (ClientRoomDatabase.class) {
+            synchronized (RoomDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            ClientRoomDatabase.class, "client_database")
+                            RoomDatabase.class, "client_database")
                             .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
@@ -72,6 +73,9 @@ public abstract class ClientRoomDatabase extends RoomDatabase {
                 // If you want to start with more words, just add them.
                 ClientDao dao = INSTANCE.clientDao();
                 dao.deleteAll();
+                ProductDao pdao = INSTANCE.productDao();
+                pdao.deleteAll();
+
 
                 //Delete sample clients
 

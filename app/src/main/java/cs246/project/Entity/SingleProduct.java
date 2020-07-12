@@ -28,11 +28,15 @@ public class SingleProduct {
     @ColumnInfo(name = "stock")
     private int stock;
 
-    public SingleProduct(long id, String name, String description, int stock) {
+    @ColumnInfo(name = "cost")
+    private float cost;
+
+    public SingleProduct(long id, String name, String description, int stock, float cost) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.stock = stock;
+        this.cost = cost;
     }
 
     /**
@@ -81,5 +85,12 @@ public class SingleProduct {
      * Set number of units on inventory of the product
      * @return
      */
-    public void setStock(int stock) { this.stock = stock; }
+
+    public float getCost() { return cost; }
+
+    /**
+     * Set number to cost of the product
+     * @return
+     */
+    public void setCost(float cost) { this.cost = cost; }
 }

@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import cs246.project.Database.ClientRoomDatabase;
+import cs246.project.Database.RoomDatabase;
 import cs246.project.Entity.SingleClient;
 import cs246.project.Interface.ClientDao;
 
@@ -26,7 +26,7 @@ class ClientRepository {
 
 
     ClientRepository(Application application) {
-        ClientRoomDatabase db = ClientRoomDatabase.getDatabase(application);
+        RoomDatabase db = RoomDatabase.getDatabase(application);
         mClientDao = db.clientDao();
         mAllClients = mClientDao.getAlphabetizedWords();
     }
@@ -40,7 +40,7 @@ class ClientRepository {
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
     void insert(SingleClient client) {
-        ClientRoomDatabase.databaseWriteExecutor.execute(() ->
+        RoomDatabase.databaseWriteExecutor.execute(() ->
             mClientDao.insert(client)
         );
     }

@@ -28,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button fab = findViewById(R.id.client);
-
-        /*
+       /*
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,12 +39,16 @@ public class MainActivity extends AppCompatActivity {
         */
 
         //Implemented with lambda
-        fab.setOnClickListener((View v)->{
+        findViewById(R.id.client).setOnClickListener((View v)->{
             Intent intent = new Intent(MainActivity.this, ClientActivity.class);
             startActivityForResult(intent, CLIENT_REQUEST_CODE);
 
         });
+        findViewById(R.id.inventory).setOnClickListener((View v)->{
+            Intent intent = new Intent(MainActivity.this, InventoryActivity.class);
+            startActivityForResult(intent, INVENTORY_REQUEST_CODE);
 
+        });
 
     }
 

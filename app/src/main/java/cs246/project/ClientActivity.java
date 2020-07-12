@@ -6,9 +6,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import android.util.Log;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class ClientActivity extends AppCompatActivity {
 
     private ClientViewModel mClientViewModel;
     public static final int NEW_CLIENT_ACTIVITY_REQUEST_CODE = 1;
+    private static final String TAG="Added Client";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +70,10 @@ public class ClientActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_CLIENT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            SingleClient client = new SingleClient(data.getStringExtra(NewClientActivity.EXTRA_REPLY));
+            String name = (data.getStringExtra(NewClientActivity.EXTRA_REPLY));
+            SingleClient client = new SingleClient(name == null ? "" : name);
             mClientViewModel.insert(client);
+            Log.i(TAG,"Client upated.");
         } else {
             Toast.makeText(
                     getApplicationContext(),
