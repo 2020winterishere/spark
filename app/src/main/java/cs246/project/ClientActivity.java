@@ -70,8 +70,10 @@ public class ClientActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_CLIENT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            String name = (data.getStringExtra(NewClientActivity.EXTRA_REPLY));
-            SingleClient client = new SingleClient(name == null ? "" : name);
+            String name = (data.getStringExtra(NewClientActivity.EXTRA_NAME));
+            String phone = (data.getStringExtra(NewClientActivity.EXTRA_PHONE));
+            String comments = (data.getStringExtra(NewClientActivity.EXTRA_COMMENTS));
+            SingleClient client = new SingleClient(name == null ? "" : name,phone, comments);
             mClientViewModel.insert(client);
             Log.i(TAG,"Client upated.");
         } else {

@@ -39,14 +39,14 @@ public interface ProductDao {
     /**
      * Delete a product by ID
      */
-    @Query("DELETE FROM " + SingleProduct.TABLE_NAME + " WHERE " + SingleProduct.COLUMN_ID + " = :id")
-    int deleteByID(String id);
+    @Query("DELETE FROM " + SingleProduct.TABLE_NAME + " WHERE name = :name")
+    int deleteByName(String name);
 
     /**
      * Edit product
-     * @param client single client
+     * @param product single product
      */
     //update
     @Update
-    int updateEntity(SingleProduct client);
+    int updateEntity(SingleProduct product);
 }

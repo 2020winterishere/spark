@@ -17,7 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class NewClientActivity extends AppCompatActivity {
 
-    public static final String EXTRA_REPLY = "com.example.android.clientlistsql.REPLY";
+    public static final String EXTRA_NAME = "client name";
+    public static final String EXTRA_PHONE = "client phone";
+    public static final String EXTRA_COMMENTS = "client comments";
 
     private EditText mEditClientView;
 
@@ -25,6 +27,7 @@ public class NewClientActivity extends AppCompatActivity {
     private EditText mEditFirstNameView;
     private EditText mEditLastNameView;
     private EditText mEditPhoneNumberView;
+    private EditText mEditComments;
 
 
     @Override
@@ -37,6 +40,7 @@ public class NewClientActivity extends AppCompatActivity {
         mEditFirstNameView =findViewById(R.id.first_name);
         mEditLastNameView =findViewById(R.id.last_name);
         mEditPhoneNumberView = findViewById(R.id.phone_number);
+        mEditComments = findViewById(R.id.editComments);
 
 
         final Button button = findViewById(R.id.button_save);
@@ -48,10 +52,13 @@ public class NewClientActivity extends AppCompatActivity {
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
                     //String client = mEditClientView.getText().toString();
-                    String client = mEditFirstNameView.getText().toString() + " " +
-                            mEditLastNameView.getText().toString() + "\n" +
-                            mEditPhoneNumberView.getText().toString();
-                    replyIntent.putExtra(EXTRA_REPLY, client);
+                    String name = mEditFirstNameView.getText().toString() + " " +
+                            mEditLastNameView.getText().toString();
+                    replyIntent.putExtra(EXTRA_NAME, name);
+                    String phone = mEditPhoneNumberView.getText().toString();
+                    replyIntent.putExtra(EXTRA_PHONE, phone);
+                    String comments = mEditComments.getText().toString();
+                    replyIntent.putExtra(EXTRA_COMMENTS, comments);
                     setResult(RESULT_OK, replyIntent);
                 }
                 finish();

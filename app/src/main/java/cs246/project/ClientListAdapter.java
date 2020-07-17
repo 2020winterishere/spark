@@ -46,8 +46,14 @@ public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.Cl
     @Override
     public void onBindViewHolder(@NonNull ClientViewHolder holder, int position) {
         if (mClients != null) {
-            SingleClient current = mClients.get(position);
-            holder.clientItemView.setText(current.getName());
+            final SingleClient current = mClients.get(position);
+            holder.clientItemView.setText(current.getName() + "\n" + current.getPhone());
+            holder.clientItemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         } else {
             // Covers the case of data not being ready yet.
             holder.clientItemView.setText(R.string.no_client);
