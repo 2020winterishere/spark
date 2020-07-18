@@ -5,61 +5,52 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/first_name"
+        android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="@dimen/min_height"
         android:layout_margin="@dimen/big_padding"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/first_name"
+        android:hint="Product Name"
         android:inputType="textAutoComplete"
         android:textSize="18sp"
-        android:autofillHints="First Name"/>
-
-
-    <EditText
-        android:id="@+id/last_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="@dimen/min_height"
-        android:layout_margin="@dimen/big_padding"
-        android:fontFamily="sans-serif-light"
-        android:hint="@string/last_name"
-        android:inputType="textAutoComplete"
-
-        android:textSize="18sp"
-        android:autofillHints="Last Name"/>
+        android:autofillHints="Name"/>
 
     <EditText
-        android:id="@+id/phone_number"
+        android:id="@+id/editStock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/big_padding"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
+        android:hint="Quantity (e.g. 8.0 oz)"
+        android:inputType="numberDecimal"
         android:minHeight="@dimen/min_height"
         android:textSize="18sp"
-        android:autofillHints="Phone Number"/>
-    <EditText
-        android:id="@+id/editComments"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/big_padding"
-        android:hint="Comments"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine" />
+        android:autofillHints="Quantity"/>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
     <Button
         android:id="@+id/button_save"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/big_padding"
         android:background="@color/colorPrimary"
         android:text="@string/button_save"
         android:textColor="@color/buttonLabel" />
-
-
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_padding"
+        android:background="@color/colorPrimary"
+        android:text="@string/button_delete"
+        android:textColor="@color/buttonLabel" />
+</LinearLayout>
 
 </LinearLayout>

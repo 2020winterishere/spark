@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:minHeight="@dimen/min_height"
+        android:layout_margin="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/name"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp"
+        android:autofillHints="Name" />
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_margin="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:minHeight="@dimen/min_height"
+        android:textSize="18sp"
+        android:autofillHints="Phone Number"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/phone_number"
+        android:layout_above="@+id/thirds">
+
+    <EditText
+        android:id="@+id/editComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_padding"
+        android:hint="Comments"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+    </ScrollView>
+   <LinearLayout
+       android:id="@+id/thirds"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:orientation="horizontal"
+       >
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/button_save"
+        android:textColor="@color/buttonLabel" />
+       <Button
+       android:id="@+id/button_delete"
+       android:layout_width="0dp"
+       android:layout_weight="1"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:background="@color/colorPrimary"
+       android:text="@string/button_delete"
+       android:textColor="@color/buttonLabel" />
+       <Button
+       android:id="@+id/button_use_product"
+       android:layout_width="0dp"
+       android:layout_weight="1"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:background="@color/colorPrimary"
+       android:text="@string/button_product"
+       android:textColor="@color/buttonLabel" />
+   </LinearLayout>
+
+
+</RelativeLayout>

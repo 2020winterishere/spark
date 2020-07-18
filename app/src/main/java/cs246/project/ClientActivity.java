@@ -69,18 +69,20 @@ public class ClientActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == NEW_CLIENT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            String name = (data.getStringExtra(NewClientActivity.EXTRA_NAME));
-            String phone = (data.getStringExtra(NewClientActivity.EXTRA_PHONE));
-            String comments = (data.getStringExtra(NewClientActivity.EXTRA_COMMENTS));
-            SingleClient client = new SingleClient(name == null ? "" : name,phone, comments);
-            mClientViewModel.insert(client);
-            Log.i(TAG,"Client upated.");
-        } else {
-            Toast.makeText(
-                    getApplicationContext(),
-                    R.string.empty_not_saved,
-                    Toast.LENGTH_LONG).show();
+        if (requestCode == NEW_CLIENT_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                String name = (data.getStringExtra(NewClientActivity.EXTRA_NAME));
+                String phone = (data.getStringExtra(NewClientActivity.EXTRA_PHONE));
+                String comments = (data.getStringExtra(NewClientActivity.EXTRA_COMMENTS));
+                SingleClient client = new SingleClient(name == null ? "" : name, phone, comments);
+                mClientViewModel.insert(client);
+                Log.i(TAG, "Client updated.");
+            } else {
+                Toast.makeText(
+                        getApplicationContext(),
+                        R.string.empty_not_saved,
+                        Toast.LENGTH_LONG).show();
+            }
         }
     }
 

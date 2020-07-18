@@ -69,20 +69,23 @@ public class InventoryActivity  extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == NEW_PRODUCT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            String name = (data.getStringExtra(NewProductActivity.EXTRA_NAME));
-            float stock = (data.getFloatExtra(NewProductActivity.EXTRA_STOCK, 0.25f));
-            stock = (float)(Math.floor(stock * 4)/4);
-            SingleProduct product = new SingleProduct(name == null ? "" : name,stock);
-            mInventoryViewModel.insert(product);
-            Log.i(TAG,"Prduct upated.");
-        } else {
-            Toast.makeText(
-                    getApplicationContext(),
-                    "Inventory not saved because it is empty.",
-                    Toast.LENGTH_LONG).show();
+        if (requestCode == NEW_PRODUCT_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                String name = (data.getStringExtra(NewProductActivity.EXTRA_NAME));
+                float stock = (data.getFloatExtra(NewProductActivity.EXTRA_STOCK, 0.25f));
+                stock = (float) (Math.floor(stock * 4) / 4);
+                SingleProduct product = new SingleProduct(name == null ? "" : name, stock);
+                mInventoryViewModel.insert(product);
+                Log.i(TAG, "Prduct upated.");
+            } else {
+                Toast.makeText(
+                        getApplicationContext(),
+                        "Inventory not saved because it is empty.",
+                        Toast.LENGTH_LONG).show();
+            }
         }
     }
+
 
 
 

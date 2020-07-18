@@ -45,10 +45,20 @@ public interface ProductDao {
     LiveData<List<SingleProduct>> getAlphabetizedWords();
 
     /**
+     * Order products of the database by name
+     */
+    @Query("SELECT * from product_table ORDER BY name ASC")
+    List<SingleProduct> getAllProducts();
+    /**
      * Delete a product by ID
      */
     @Query("DELETE FROM " + SingleProduct.TABLE_NAME + " WHERE name = :name")
     int deleteByName(String name);
+    /**
+     * Delete a product by ID
+     */
+    @Query("SELECT * FROM " + SingleProduct.TABLE_NAME + " WHERE name = :name")
+    SingleProduct getByName(String name);
 
     /**
      * Edit product

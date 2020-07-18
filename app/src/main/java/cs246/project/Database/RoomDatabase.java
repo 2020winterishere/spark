@@ -72,9 +72,9 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
                 // Populate the database in the background.
                 // If you want to start with more words, just add them.
                 ClientDao dao = INSTANCE.clientDao();
-                dao.deleteAll();
+                //dao.deleteAll();
                 ProductDao pdao = INSTANCE.productDao();
-                pdao.deleteAll();
+                //pdao.deleteAll();
 
 
                 //Delete sample clients

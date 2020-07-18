@@ -38,6 +38,10 @@ public interface ClientDao {
     @Query("DELETE FROM " + SingleClient.TABLE_NAME + " WHERE name = :name")
     int deleteByName(String name);
 
+    //select client
+    @Query("SELECT * FROM " + SingleClient.TABLE_NAME + " WHERE name = :name")
+    SingleClient getByName(String name);
+
     //update
     @Update
     int updateEntity(SingleClient client);

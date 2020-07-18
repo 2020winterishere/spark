@@ -1,6 +1,8 @@
 package cs246.project;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 import cs246.project.Entity.SingleProduct;
@@ -32,8 +35,14 @@ public class InventoryListAdapter  extends RecyclerView.Adapter<InventoryListAda
 
     private final LayoutInflater mInflater;
     private List<SingleProduct> mProducts; // Cached copy of Products
+    private WeakReference<Activity> mActivity;
+    static final String PRODUCT_NAME = "Product Name";
+    static final int PRODUCT_EDIT_REQUEST_CODE = 421;
 
-    InventoryListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
+    InventoryListAdapter(Activity context) {
+        mInflater = LayoutInflater.from(context);
+        mActivity = new WeakReference<>(context);
+    }
 
     @NonNull
     @Override
@@ -41,7 +50,6 @@ public class InventoryListAdapter  extends RecyclerView.Adapter<InventoryListAda
         View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
         return new InventoryListAdapter.ProductViewHolder(itemView);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull InventoryListAdapter.ProductViewHolder holder, int position) {
@@ -51,7 +59,9 @@ public class InventoryListAdapter  extends RecyclerView.Adapter<InventoryListAda
             holder.ProductItemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent = new Intent(mActivity.get(), InventoryEditActivity.class);
+                    intent.putExtra(PRODUCT_NAME, current.getName());
+                    mActivity.get().startActivityForResult(intent, PRODUCT_EDIT_REQUEST_CODE);
                 }
             });
         }
