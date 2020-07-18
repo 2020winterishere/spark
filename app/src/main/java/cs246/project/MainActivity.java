@@ -22,23 +22,16 @@ public class MainActivity extends AppCompatActivity {
     public static final int CLIENT_REQUEST_CODE = 1;
     public static final int INVENTORY_REQUEST_CODE = 2;
 
+    /** <h1> Main app page functionality</h1>
+     * <p>This allows the program to check to see which selection is made in the main page.
+     * Directs app to correct database portion client/product.     *
+     * </p>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-       /*
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ClientActivity.class);
-                startActivityForResult(intent, CLIENT_REQUEST_CODE);
-            }
-        });
-        */
-
-        //Implemented with lambda
         findViewById(R.id.client).setOnClickListener((View v)->{
             Intent intent = new Intent(MainActivity.this, ClientActivity.class);
             startActivityForResult(intent, CLIENT_REQUEST_CODE);
@@ -54,16 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-     /*   if (requestCode == NEW_CLIENT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            SingleClient client = new SingleClient(data.getStringExtra(NewClientActivity.EXTRA_REPLY));
-            mClientViewModel.insert(client);
-        } else {
-            Toast.makeText(
-                    getApplicationContext(),
-                    R.string.empty_not_saved,
-                    Toast.LENGTH_LONG).show();
-        }   */
 
     }
 

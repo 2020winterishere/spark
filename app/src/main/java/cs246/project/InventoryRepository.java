@@ -11,6 +11,14 @@ import cs246.project.Entity.SingleClient;
 import cs246.project.Entity.SingleProduct;
 import cs246.project.Interface.ClientDao;
 import cs246.project.Interface.ProductDao;
+/**
+ * <h1> Inventory Repository</h1>
+ * <p>
+ *     This repository class abstracts access to multiple data sources. The repository is not
+ *     parts of the Architecture Components Libraries. It provides clean API for data access
+ *     to the rest of the application.
+ * </p>
+ */
 
 public class InventoryRepository {
 

@@ -79,7 +79,7 @@ public class InventoryActivity  extends AppCompatActivity {
         } else {
             Toast.makeText(
                     getApplicationContext(),
-                    R.string.empty_not_saved,
+                    "Inventory not saved because it is empty.",
                     Toast.LENGTH_LONG).show();
         }
     }

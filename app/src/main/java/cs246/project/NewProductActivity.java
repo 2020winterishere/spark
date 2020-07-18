@@ -11,6 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class NewProductActivity extends AppCompatActivity {
 
+    /**
+     * <h1>Display for a single product</h1>
+     * <p>This is the display of adding a single product.
+     * </p>
+     *
+     */
+
     public static final String EXTRA_NAME = "product name";
     public static final String EXTRA_STOCK = "product stock";
 
@@ -35,11 +42,10 @@ public class NewProductActivity extends AppCompatActivity {
         button.setOnClickListener((View v) -> {
 
             Intent replyIntent = new Intent();
-            //check if first name field is empty. If it is empty skip saving data.
+            //check if product field is empty. If it is empty skip saving data.
             if (TextUtils.isEmpty(mEditProductNameView.getText())) {
                 setResult(RESULT_CANCELED, replyIntent);
             } else {
-                //String client = mEditClientView.getText().toString();
                 String name = mEditProductNameView.getText().toString();
                 replyIntent.putExtra(EXTRA_NAME, name);
                 float stock;

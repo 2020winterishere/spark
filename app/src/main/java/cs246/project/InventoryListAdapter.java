@@ -12,7 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import cs246.project.Entity.SingleProduct;
-
+/**
+ * <h1> Inventory Recycler View</h1>
+ * <p>
+ *     We use a recycler view to display all data in product database instead of using a
+ *     TextView. This will allow us to present data in a nicer way.
+ * </p>
+ */
 public class InventoryListAdapter  extends RecyclerView.Adapter<InventoryListAdapter.ProductViewHolder> {
 
     class ProductViewHolder extends RecyclerView.ViewHolder {
