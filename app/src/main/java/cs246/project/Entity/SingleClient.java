@@ -40,19 +40,14 @@ public class  SingleClient {
 
     public void setName(@NonNull String name) {this.name = name;}
 
-
-    public SingleClient(@NonNull String name) {
-        this.name = name;
-    }
-
-    /*@ColumnInfo(name = "phone")
+    @ColumnInfo(name = "phone")
     private String phone;
 
     @ColumnInfo(name = "comments")
     private String comments;
 
-    public SingleClient(String client, String phone, String cooments) {
-        this.mClient = client;
+    public SingleClient(@NonNull String name, String phone, String comments) {
+        this.name = name;
         this.phone = phone;
         this.comments = comments;
     }
@@ -63,5 +58,5 @@ public class  SingleClient {
 
     public String getComments() {return comments;}
 
-    public void setComments(String comments) {this.comments = comments;} */
+    public void setComments(String comments) {this.comments = comments;}
 }

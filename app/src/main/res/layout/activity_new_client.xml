@@ -54,18 +54,25 @@
         android:minHeight="@dimen/min_height"
         android:textSize="18sp"
         android:autofillHints="Phone Number"/>
-
-
-
-
+    <EditText
+        android:id="@+id/editComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_padding"
+        android:hint="Comments"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_padding"
         android:background="@color/colorPrimary"
         android:text="@string/button_save"
-        android:layout_margin="@dimen/big_padding"
         android:textColor="@color/buttonLabel" />
+
+
 
 </LinearLayout>

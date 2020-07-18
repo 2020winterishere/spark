@@ -2,6 +2,7 @@ package cs246.project.Entity;
 
 import android.provider.BaseColumns;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -15,42 +16,17 @@ public class SingleProduct {
     /** The name od the ID column. */
     public static final String COLUMN_ID = BaseColumns._ID;
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(index = true, name = COLUMN_ID)
-    private long id;
-
+    @PrimaryKey @NonNull
     @ColumnInfo(name = "name")
     private String name;
 
-    @ColumnInfo(name = "description")
-    private String description;
-
     @ColumnInfo(name = "stock")
-    private int stock;
+    private float stock;
 
-    @ColumnInfo(name = "cost")
-    private float cost;
-
-    public SingleProduct(long id, String name, String description, int stock, float cost) {
-        this.id = id;
+    public SingleProduct(String name, float stock) {
         this.name = name;
-        this.description = description;
         this.stock = stock;
-        this.cost = cost;
     }
-
-    /**
-     * Get ID of the product
-     * @return
-     */
-    public long getId() { return id; }
-
-    /**
-     * Set ID of the product
-     * @return
-     */
-    public void setId(long id) { this.id = id; }
-
     /**
      * Get name of the product
      * @return
@@ -64,33 +40,14 @@ public class SingleProduct {
     public void setName(String name) { this.name = name; }
 
     /**
-     * Get description of the product
-     * @return
-     */
-    public String getDescription() { return description; }
-
-    /**
-     * Set descripton of the product
-     * @return
-     */
-    public void setDescription(String description) { this.description = description; }
-
-    /**
      * Get number of units on inventory of the product
      * @return
      */
-    public int getStock() { return stock; }
+    public float getStock() { return stock; }
 
     /**
      * Set number of units on inventory of the product
      * @return
      */
-
-    public float getCost() { return cost; }
-
-    /**
-     * Set number to cost of the product
-     * @return
-     */
-    public void setCost(float cost) { this.cost = cost; }
+    public void setStock(float stock){ this.stock = stock; }
 }
