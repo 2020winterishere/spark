@@ -34,7 +34,7 @@ public class NewClientActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_client);
-       // mEditClientView = findViewById(R.id.edit_client);
+        //mEditClientView = findViewById(R.id.edit_client);
 
         //add first name, last name and phone number
         mEditFirstNameView =findViewById(R.id.first_name);

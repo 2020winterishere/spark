@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -56,9 +57,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/big_padding"
-        android:background="@color/colorPrimary"
+        android:background="#79a6d2"
         android:text="@string/button_save"
-        android:textColor="@color/buttonLabel" />
+        android:textColor="@color/buttonLabel"
+        app:backgroundTint="#79a6d2" />
 
 
 

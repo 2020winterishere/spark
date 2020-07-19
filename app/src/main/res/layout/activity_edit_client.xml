@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -53,33 +54,39 @@
        android:layout_alignParentBottom="true"
        android:orientation="horizontal"
        >
-    <Button
-        android:id="@+id/button_save"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/button_save"
-        android:textColor="@color/buttonLabel" />
+
        <Button
-       android:id="@+id/button_delete"
-       android:layout_width="0dp"
-       android:layout_weight="1"
-       android:layout_height="wrap_content"
-       android:layout_margin="5dp"
-       android:background="@color/colorPrimary"
-       android:text="@string/button_delete"
-       android:textColor="@color/buttonLabel" />
+           android:id="@+id/button_save"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_margin="5dp"
+           android:layout_weight="1"
+           android:background="#79a6d2"
+           android:text="@string/button_save"
+           android:textColor="@color/buttonLabel"
+           app:backgroundTint="#79a6d2" />
+
        <Button
-       android:id="@+id/button_use_product"
-       android:layout_width="0dp"
-       android:layout_weight="1"
-       android:layout_height="wrap_content"
-       android:layout_margin="5dp"
-       android:background="@color/colorPrimary"
-       android:text="@string/button_product"
-       android:textColor="@color/buttonLabel" />
+           android:id="@+id/button_delete"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_margin="5dp"
+           android:layout_weight="1"
+           android:background="#79a6d2"
+           android:text="@string/button_delete"
+           android:textColor="@color/buttonLabel"
+           app:backgroundTint="#79a6d2" />
+
+       <Button
+           android:id="@+id/button_use_product"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_margin="5dp"
+           android:layout_weight="1"
+           android:background="#79a6d2"
+           android:text="@string/button_product"
+           android:textColor="@color/buttonLabel"
+           app:backgroundTint="#79a6d2" />
    </LinearLayout>
 
 

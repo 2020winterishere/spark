@@ -52,8 +52,8 @@ dependencies {
 
 // UI
     implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 // Testing
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
-
 }
