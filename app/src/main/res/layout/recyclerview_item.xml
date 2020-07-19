@@ -9,5 +9,5 @@
         style="@style/client_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light" />
+        android:background="#79a6d2" />
 </LinearLayout>
